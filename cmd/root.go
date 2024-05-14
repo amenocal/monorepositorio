@@ -35,7 +35,10 @@ var rootCmd = &cobra.Command{
 	con GoLang y Cobra.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+	Run: func(cmd *cobra.Command, args []string) {
+		mensaje, _ := cmd.Flags().GetString("mensaje")
+		cmd.Println("El mensaje es: ", mensaje)
+	},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
