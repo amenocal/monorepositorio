@@ -22,6 +22,7 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -37,7 +38,7 @@ var rootCmd = &cobra.Command{
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
 		mensaje, _ := cmd.Flags().GetString("mensaje")
-		cmd.Println("El mensaje es: ", mensaje)
+		fmt.Println("El mensaje es: ", mensaje)
 	},
 }
 
